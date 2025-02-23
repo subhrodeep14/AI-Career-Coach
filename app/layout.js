@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
             disableTransitionOnChange
           >
             {/*header*/}
-            <main className="min-h-screen">
+            <main className="min-h-screen bg-background">
             {children}
             </main>
             {/*footer*/}
