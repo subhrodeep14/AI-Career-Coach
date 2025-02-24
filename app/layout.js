@@ -2,6 +2,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
+import Header from "@/components/Header";
 
 
 
@@ -17,7 +18,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider appearance={{
+      baseTheme: "dark",
+    }}>
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${outfit.className} `}
@@ -29,7 +32,8 @@ export default function RootLayout({ children }) {
             disableTransitionOnChange
           >
             {/*header*/}
-            <main className="min-h-screen bg-background">
+            <Header/>
+            <main className="container mx-auto min-h-screen">
             {children}
             </main>
             {/*footer*/}
